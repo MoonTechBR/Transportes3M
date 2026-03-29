@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // Número principal oficial da 3M extraído do cartão
+    // Número principal oficial da 3M
     const WHATSAPP_NUMBER = "5511993977895"; 
 
     const serviceCards = document.querySelectorAll(".add-to-cart-btn");
@@ -85,18 +85,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Montagem e Envio para WhatsApp
     sendWhatsappBtn.addEventListener("click", () => {
-        // RESTAURADO: Captura exata do endereço + Número (igual Rick Transportes)
         const origin = document.getElementById("origin").value.trim();
         const numOrigin = document.getElementById("num-origin").value.trim();
         const destination = document.getElementById("destination").value.trim();
         const numDestination = document.getElementById("num-destination").value.trim();
         
         const accessType = document.getElementById("access-type").value;
+        
+        // Capturando todas as 4 opções de serviços extras (Rick + 3M)
+        const helpers = document.getElementById("helpers").value;
+        const assembly = document.getElementById("assembly").value;
         const packing = document.getElementById("packing").value;
         const storage = document.getElementById("storage").value;
+        
         const extraItems = document.getElementById("extra-items").value.trim();
 
-        // Validação de segurança
+        // Validação
         if (!origin || !destination) {
             Toastify({
                 text: "⚠️ Preencha a Rua/Bairro de Retirada e Entrega!",
@@ -121,16 +125,16 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
 
-        // RESTAURADO: Lista completa de itens para o array (Igual Rick Transportes)
+        // Lista completa de itens estruturada para a mensagem
         let inventoryText = "";
         const items = [
             { id: "item-geladeira", label: "Geladeira(s)" },
             { id: "item-fogao", label: "Fogão" },
             { id: "item-maquina", label: "Máquina de Lavar" },
+            { id: "item-mesa", label: "Mesa c/ Cadeiras" },
             { id: "item-sofa", label: "Sofá(s)" },
             { id: "item-rack", label: "Rack(s)" },
             { id: "item-painel", label: "Painel de TV" },
-            { id: "item-mesa", label: "Mesa(s)" },
             { id: "item-cama", label: "Cama(s)" },
             { id: "item-colchao", label: "Colchão" },
             { id: "item-armario", label: "Guarda-Roupa(s)" },
@@ -147,7 +151,6 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
 
-        // Formatação do Endereço Completo (Tratando se o cliente não colocou o número)
         const fullOrigin = numOrigin ? `${origin}, N° ${numOrigin}` : origin;
         const fullDestination = numDestination ? `${destination}, N° ${numDestination}` : destination;
 
@@ -158,13 +161,15 @@ document.addEventListener("DOMContentLoaded", () => {
         message += `🏁 *Entrega:* ${fullDestination}\n`;
         message += `🏢 *Acesso/Imóvel:* ${accessType}\n\n`;
         
-        message += `*SERVIÇOS ESPECIAIS 3M:*\n`;
+        message += `*SERVIÇOS EXTRAS:*\n`;
+        message += `👷 ${helpers}\n`;
+        message += `🛠️ ${assembly}\n`;
         message += `📦 *Embalagem:* ${packing}\n`;
         message += `🏭 *Armazenamento:* ${storage}\n\n`;
 
-        message += `*INVENTÁRIO PRINCIPAL:*\n`;
+        message += `*INVENTÁRIO:* (Separado por Cômodos)\n`;
         if (inventoryText === "" && !extraItems) {
-            message += `_Apenas itens miúdos ou não informados._\n`;
+            message += `_Sem móveis grandes informados._\n`;
         } else {
             message += inventoryText;
             if (extraItems) message += `\n*Outros/Avisos:* ${extraItems}\n`;
@@ -177,13 +182,19 @@ document.addEventListener("DOMContentLoaded", () => {
         quoteModal.classList.add("hidden");
     });
 
-    // Limpeza de cache de formulário
+    // Reset incluindo os novos selects
     function resetForm() {
         document.querySelectorAll("input[type='text']").forEach(input => input.value = "");
         document.getElementById("access-type").value = "";
         
+        const helpersEl = document.getElementById("helpers");
+        if(helpersEl) helpersEl.value = "Somente o Motorista";
+
+        const assemblyEl = document.getElementById("assembly");
+        if(assemblyEl) assemblyEl.value = "Sem montagem";
+
         const packingEl = document.getElementById("packing");
-        if(packingEl) packingEl.value = "Com Embalagem e Encaixotamento";
+        if(packingEl) packingEl.value = "Sem embalagem especial";
         
         const storageEl = document.getElementById("storage");
         if(storageEl) storageEl.value = "Direto para o destino";
@@ -202,7 +213,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
         let isOpen = false;
 
-        // Seg a Sex (8h às 18h) | Sábados (8h às 14h)
         if (day >= 1 && day <= 5) { 
             if (hour >= 8 && hour < 18) isOpen = true;
         } else if (day === 6) { 
