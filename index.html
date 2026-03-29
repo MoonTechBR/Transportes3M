@@ -36,7 +36,7 @@
 
         input[type=number]::-webkit-inner-spin-button, 
         input[type=number]::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
-        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar { width: 6px; }
         ::-webkit-scrollbar-track { background: #1a1a1a; }
         ::-webkit-scrollbar-thumb { background: #FFCC00; border-radius: 4px; }
     </style>
@@ -77,7 +77,7 @@
                 <div class="p-6 flex-1 flex flex-col justify-between pointer-events-none">
                     <div>
                         <h3 class="font-black text-2xl mb-2 uppercase text-white">Transporte & <span class="text-brand-yellow">Mudança</span></h3>
-                        <p class="text-gray-400 text-sm leading-relaxed">Carretos e mudanças com caminhão baú adequado. Opção com <strong class="text-white">embalagem e encaixotamento</strong> completo.</p>
+                        <p class="text-gray-400 text-sm leading-relaxed">Carretos e mudanças com caminhão baú adequado. Opção com <strong class="text-white">embalagem, ajudantes e montagem</strong>.</p>
                     </div>
                     <div class="flex items-center justify-between mt-6">
                         <span class="font-bold text-lg text-green-400 italic">Orçamento Rápido</span>
@@ -152,7 +152,7 @@
     </footer>
 
     <div class="fixed inset-0 bg-black/90 z-[100] flex items-center justify-center hidden p-4 backdrop-blur-sm" id="quote-modal" role="dialog" aria-modal="true">
-        <div class="bg-zinc-900 border-2 border-brand-yellow w-full max-w-lg rounded-2xl p-6 overflow-y-auto max-h-[90vh] shadow-[0_0_40px_rgba(255,204,0,0.2)]">
+        <div class="bg-zinc-900 border-2 border-brand-yellow w-full max-w-lg rounded-2xl p-6 overflow-y-auto max-h-[90vh] shadow-[0_0_40px_rgba(255,204,0,0.2)] scroll-smooth">
             
             <h2 class="text-2xl font-black text-center mb-4 uppercase text-white italic">Seu Orçamento</h2>
             <p id="selected-service-title" class="text-center font-black text-black bg-brand-yellow py-2 rounded-lg mb-6 uppercase tracking-wider"></p>
@@ -176,7 +176,7 @@
                     <input type="text" id="num-destination" placeholder="Número / Complemento" class="w-full p-3 bg-zinc-800 border border-zinc-700 text-white rounded-xl outline-none focus:border-brand-yellow focus:ring-1 ring-brand-yellow"/>
                 </div>
                 
-                <select id="access-type" class="w-full p-3 mt-4 bg-zinc-800 border border-zinc-700 text-white rounded-xl outline-none focus:border-brand-yellow focus:ring-1 ring-brand-yellow text-sm font-bold">
+                <select id="access-type" class="w-full p-3 mt-2 bg-zinc-800 border border-zinc-700 text-white rounded-xl outline-none focus:border-brand-yellow focus:ring-1 ring-brand-yellow text-sm font-bold">
                     <option value="" disabled selected>O local de retirada/entrega possui escadas?</option>
                     <option value="Casa Térrea / Sem escadas">Casa Térrea / Sem escadas</option>
                     <option value="Apartamento com Elevador">Apartamento (Com Elevador)</option>
@@ -184,115 +184,148 @@
                 </select>
 
                 <p class="font-bold border-l-4 border-brand-red pl-2 uppercase text-sm text-gray-300 mt-6">2. Serviços Especiais 3M</p>
+                
+                <div class="grid grid-cols-2 gap-2 mb-2">
+                    <select id="helpers" class="w-full p-3 bg-zinc-800 border border-zinc-700 text-white rounded-xl outline-none focus:border-brand-yellow text-sm font-bold">
+                        <option value="Somente o Motorista">Sem Ajudante</option>
+                        <option value="1 Ajudante">1 Ajudante</option>
+                        <option value="2 Ajudantes">2 Ajudantes</option>
+                    </select>
+                    <select id="assembly" class="w-full p-3 bg-zinc-800 border border-zinc-700 text-white rounded-xl outline-none focus:border-brand-yellow text-sm font-bold">
+                        <option value="Sem montagem">Sem Montador</option>
+                        <option value="Com montagem">Precisa Desmontar/Montar</option>
+                    </select>
+                </div>
                 <div class="grid grid-cols-2 gap-2">
                     <select id="packing" class="w-full p-3 bg-zinc-800 border border-zinc-700 text-white rounded-xl outline-none focus:border-brand-yellow text-sm font-bold">
-                        <option value="Com Embalagem e Encaixotamento">Com Embalagem / Encaixotamento</option>
-                        <option value="Apenas Transporte">Apenas Transporte</option>
+                        <option value="Sem embalagem especial">Sem Embalagem</option>
+                        <option value="Com Embalagem e Encaixotamento">Quero Embalagem</option>
                     </select>
                     <select id="storage" class="w-full p-3 bg-zinc-800 border border-zinc-700 text-white rounded-xl outline-none focus:border-brand-yellow text-sm font-bold">
-                        <option value="Direto para o destino">Direto para o destino</option>
-                        <option value="Preciso de Guarda Móveis">Preciso de Guarda Móveis</option>
+                        <option value="Direto para o destino">Direto pro destino</option>
+                        <option value="Preciso de Guarda Móveis">Guarda Móveis</option>
                     </select>
                 </div>
 
-                <p class="font-bold border-l-4 border-brand-red pl-2 uppercase text-sm text-gray-300 mt-6">3. Itens Principais (Volume)</p>
+                <p class="font-bold border-l-4 border-brand-red pl-2 uppercase text-sm text-gray-300 mt-6">3. Inventário (Por Cômodos)</p>
                 
-                <div class="bg-zinc-800/80 p-4 rounded-xl border border-zinc-700 space-y-3">
+                <div class="bg-zinc-800/80 p-4 rounded-xl border border-zinc-700 space-y-4">
                     
-                    <div class="flex justify-between items-center">
-                        <span class="text-sm font-bold text-gray-300">🧊 Geladeira</span>
-                        <div class="flex items-center gap-3">
-                            <button type="button" class="w-8 h-8 rounded-full bg-zinc-700 text-white font-bold hover:bg-brand-red transition counter-btn" data-action="minus" data-target="item-geladeira">-</button>
-                            <span class="w-4 text-center font-bold item-count text-brand-yellow" id="item-geladeira">0</span>
-                            <button type="button" class="w-8 h-8 rounded-full bg-zinc-700 text-white font-bold hover:bg-green-500 transition counter-btn" data-action="plus" data-target="item-geladeira">+</button>
-                        </div>
-                    </div>
-                    <div class="flex justify-between items-center">
-                        <span class="text-sm font-bold text-gray-300">🔥 Fogão</span>
-                        <div class="flex items-center gap-3">
-                            <button type="button" class="w-8 h-8 rounded-full bg-zinc-700 text-white font-bold hover:bg-brand-red transition counter-btn" data-action="minus" data-target="item-fogao">-</button>
-                            <span class="w-4 text-center font-bold item-count text-brand-yellow" id="item-fogao">0</span>
-                            <button type="button" class="w-8 h-8 rounded-full bg-zinc-700 text-white font-bold hover:bg-green-500 transition counter-btn" data-action="plus" data-target="item-fogao">+</button>
-                        </div>
-                    </div>
-                    <div class="flex justify-between items-center">
-                        <span class="text-sm font-bold text-gray-300">🧺 Máquina de Lavar</span>
-                        <div class="flex items-center gap-3">
-                            <button type="button" class="w-8 h-8 rounded-full bg-zinc-700 text-white font-bold hover:bg-brand-red transition counter-btn" data-action="minus" data-target="item-maquina">-</button>
-                            <span class="w-4 text-center font-bold item-count text-brand-yellow" id="item-maquina">0</span>
-                            <button type="button" class="w-8 h-8 rounded-full bg-zinc-700 text-white font-bold hover:bg-green-500 transition counter-btn" data-action="plus" data-target="item-maquina">+</button>
-                        </div>
-                    </div>
-
-                    <div class="flex justify-between items-center border-t border-zinc-700 pt-2">
-                        <span class="text-sm font-bold text-gray-300">🛋️ Sofá</span>
-                        <div class="flex items-center gap-3">
-                            <button type="button" class="w-8 h-8 rounded-full bg-zinc-700 text-white font-bold hover:bg-brand-red transition counter-btn" data-action="minus" data-target="item-sofa">-</button>
-                            <span class="w-4 text-center font-bold item-count text-brand-yellow" id="item-sofa">0</span>
-                            <button type="button" class="w-8 h-8 rounded-full bg-zinc-700 text-white font-bold hover:bg-green-500 transition counter-btn" data-action="plus" data-target="item-sofa">+</button>
-                        </div>
-                    </div>
-                    <div class="flex justify-between items-center">
-                        <span class="text-sm font-bold text-gray-300">📺 Rack</span>
-                        <div class="flex items-center gap-3">
-                            <button type="button" class="w-8 h-8 rounded-full bg-zinc-700 text-white font-bold hover:bg-brand-red transition counter-btn" data-action="minus" data-target="item-rack">-</button>
-                            <span class="w-4 text-center font-bold item-count text-brand-yellow" id="item-rack">0</span>
-                            <button type="button" class="w-8 h-8 rounded-full bg-zinc-700 text-white font-bold hover:bg-green-500 transition counter-btn" data-action="plus" data-target="item-rack">+</button>
-                        </div>
-                    </div>
-                    <div class="flex justify-between items-center">
-                        <span class="text-sm font-bold text-gray-300">🖥️ Painel de TV</span>
-                        <div class="flex items-center gap-3">
-                            <button type="button" class="w-8 h-8 rounded-full bg-zinc-700 text-white font-bold hover:bg-brand-red transition counter-btn" data-action="minus" data-target="item-painel">-</button>
-                            <span class="w-4 text-center font-bold item-count text-brand-yellow" id="item-painel">0</span>
-                            <button type="button" class="w-8 h-8 rounded-full bg-zinc-700 text-white font-bold hover:bg-green-500 transition counter-btn" data-action="plus" data-target="item-painel">+</button>
-                        </div>
-                    </div>
-                    <div class="flex justify-between items-center">
-                        <span class="text-sm font-bold text-gray-300">🪑 Mesa</span>
-                        <div class="flex items-center gap-3">
-                            <button type="button" class="w-8 h-8 rounded-full bg-zinc-700 text-white font-bold hover:bg-brand-red transition counter-btn" data-action="minus" data-target="item-mesa">-</button>
-                            <span class="w-4 text-center font-bold item-count text-brand-yellow" id="item-mesa">0</span>
-                            <button type="button" class="w-8 h-8 rounded-full bg-zinc-700 text-white font-bold hover:bg-green-500 transition counter-btn" data-action="plus" data-target="item-mesa">+</button>
+                    <div>
+                        <h4 class="text-brand-yellow text-xs font-black uppercase mb-3 border-b border-zinc-700 pb-1">Cozinha & Lavanderia</h4>
+                        <div class="space-y-3">
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm font-bold text-gray-300">🧊 Geladeira</span>
+                                <div class="flex items-center gap-3">
+                                    <button type="button" class="w-8 h-8 rounded-full bg-zinc-700 text-white font-bold hover:bg-brand-red transition counter-btn" data-action="minus" data-target="item-geladeira">-</button>
+                                    <span class="w-4 text-center font-bold item-count text-brand-yellow" id="item-geladeira">0</span>
+                                    <button type="button" class="w-8 h-8 rounded-full bg-zinc-700 text-white font-bold hover:bg-green-500 transition counter-btn" data-action="plus" data-target="item-geladeira">+</button>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm font-bold text-gray-300">🔥 Fogão</span>
+                                <div class="flex items-center gap-3">
+                                    <button type="button" class="w-8 h-8 rounded-full bg-zinc-700 text-white font-bold hover:bg-brand-red transition counter-btn" data-action="minus" data-target="item-fogao">-</button>
+                                    <span class="w-4 text-center font-bold item-count text-brand-yellow" id="item-fogao">0</span>
+                                    <button type="button" class="w-8 h-8 rounded-full bg-zinc-700 text-white font-bold hover:bg-green-500 transition counter-btn" data-action="plus" data-target="item-fogao">+</button>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm font-bold text-gray-300">🧺 Máquina de Lavar</span>
+                                <div class="flex items-center gap-3">
+                                    <button type="button" class="w-8 h-8 rounded-full bg-zinc-700 text-white font-bold hover:bg-brand-red transition counter-btn" data-action="minus" data-target="item-maquina">-</button>
+                                    <span class="w-4 text-center font-bold item-count text-brand-yellow" id="item-maquina">0</span>
+                                    <button type="button" class="w-8 h-8 rounded-full bg-zinc-700 text-white font-bold hover:bg-green-500 transition counter-btn" data-action="plus" data-target="item-maquina">+</button>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm font-bold text-gray-300">🪑 Mesa com Cadeiras</span>
+                                <div class="flex items-center gap-3">
+                                    <button type="button" class="w-8 h-8 rounded-full bg-zinc-700 text-white font-bold hover:bg-brand-red transition counter-btn" data-action="minus" data-target="item-mesa">-</button>
+                                    <span class="w-4 text-center font-bold item-count text-brand-yellow" id="item-mesa">0</span>
+                                    <button type="button" class="w-8 h-8 rounded-full bg-zinc-700 text-white font-bold hover:bg-green-500 transition counter-btn" data-action="plus" data-target="item-mesa">+</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="flex justify-between items-center border-t border-zinc-700 pt-2">
-                        <span class="text-sm font-bold text-gray-300">🛏️ Cama</span>
-                        <div class="flex items-center gap-3">
-                            <button type="button" class="w-8 h-8 rounded-full bg-zinc-700 text-white font-bold hover:bg-brand-red transition counter-btn" data-action="minus" data-target="item-cama">-</button>
-                            <span class="w-4 text-center font-bold item-count text-brand-yellow" id="item-cama">0</span>
-                            <button type="button" class="w-8 h-8 rounded-full bg-zinc-700 text-white font-bold hover:bg-green-500 transition counter-btn" data-action="plus" data-target="item-cama">+</button>
-                        </div>
-                    </div>
-                    <div class="flex justify-between items-center">
-                        <span class="text-sm font-bold text-gray-300">🔲 Colchão (Avulso)</span>
-                        <div class="flex items-center gap-3">
-                            <button type="button" class="w-8 h-8 rounded-full bg-zinc-700 text-white font-bold hover:bg-brand-red transition counter-btn" data-action="minus" data-target="item-colchao">-</button>
-                            <span class="w-4 text-center font-bold item-count text-brand-yellow" id="item-colchao">0</span>
-                            <button type="button" class="w-8 h-8 rounded-full bg-zinc-700 text-white font-bold hover:bg-green-500 transition counter-btn" data-action="plus" data-target="item-colchao">+</button>
-                        </div>
-                    </div>
-                    <div class="flex justify-between items-center">
-                        <span class="text-sm font-bold text-gray-300">🚪 Guarda-Roupa</span>
-                        <div class="flex items-center gap-3">
-                            <button type="button" class="w-8 h-8 rounded-full bg-zinc-700 text-white font-bold hover:bg-brand-red transition counter-btn" data-action="minus" data-target="item-armario">-</button>
-                            <span class="w-4 text-center font-bold item-count text-brand-yellow" id="item-armario">0</span>
-                            <button type="button" class="w-8 h-8 rounded-full bg-zinc-700 text-white font-bold hover:bg-green-500 transition counter-btn" data-action="plus" data-target="item-armario">+</button>
+                    <div>
+                        <h4 class="text-brand-yellow text-xs font-black uppercase mb-3 mt-4 border-b border-zinc-700 pb-1">Sala de Estar</h4>
+                        <div class="space-y-3">
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm font-bold text-gray-300">🛋️ Sofá</span>
+                                <div class="flex items-center gap-3">
+                                    <button type="button" class="w-8 h-8 rounded-full bg-zinc-700 text-white font-bold hover:bg-brand-red transition counter-btn" data-action="minus" data-target="item-sofa">-</button>
+                                    <span class="w-4 text-center font-bold item-count text-brand-yellow" id="item-sofa">0</span>
+                                    <button type="button" class="w-8 h-8 rounded-full bg-zinc-700 text-white font-bold hover:bg-green-500 transition counter-btn" data-action="plus" data-target="item-sofa">+</button>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm font-bold text-gray-300">📺 Rack</span>
+                                <div class="flex items-center gap-3">
+                                    <button type="button" class="w-8 h-8 rounded-full bg-zinc-700 text-white font-bold hover:bg-brand-red transition counter-btn" data-action="minus" data-target="item-rack">-</button>
+                                    <span class="w-4 text-center font-bold item-count text-brand-yellow" id="item-rack">0</span>
+                                    <button type="button" class="w-8 h-8 rounded-full bg-zinc-700 text-white font-bold hover:bg-green-500 transition counter-btn" data-action="plus" data-target="item-rack">+</button>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm font-bold text-gray-300">🖥️ Painel de TV</span>
+                                <div class="flex items-center gap-3">
+                                    <button type="button" class="w-8 h-8 rounded-full bg-zinc-700 text-white font-bold hover:bg-brand-red transition counter-btn" data-action="minus" data-target="item-painel">-</button>
+                                    <span class="w-4 text-center font-bold item-count text-brand-yellow" id="item-painel">0</span>
+                                    <button type="button" class="w-8 h-8 rounded-full bg-zinc-700 text-white font-bold hover:bg-green-500 transition counter-btn" data-action="plus" data-target="item-painel">+</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="flex justify-between items-center border-t border-zinc-700 pt-2">
-                        <span class="text-sm font-bold text-brand-yellow">📦 Caixas / Sacos (Aprox.)</span>
-                        <div class="flex items-center gap-3">
-                            <button type="button" class="w-8 h-8 rounded-full bg-zinc-700 text-white font-bold hover:bg-brand-red transition counter-btn" data-action="minus" data-target="item-caixas">-</button>
-                            <span class="w-4 text-center font-bold item-count text-white" id="item-caixas">0</span>
-                            <button type="button" class="w-8 h-8 rounded-full bg-zinc-700 text-white font-bold hover:bg-green-500 transition counter-btn" data-action="plus" data-target="item-caixas">+</button>
+                    <div>
+                        <h4 class="text-brand-yellow text-xs font-black uppercase mb-3 mt-4 border-b border-zinc-700 pb-1">Quartos</h4>
+                        <div class="space-y-3">
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm font-bold text-gray-300">🛏️ Cama</span>
+                                <div class="flex items-center gap-3">
+                                    <button type="button" class="w-8 h-8 rounded-full bg-zinc-700 text-white font-bold hover:bg-brand-red transition counter-btn" data-action="minus" data-target="item-cama">-</button>
+                                    <span class="w-4 text-center font-bold item-count text-brand-yellow" id="item-cama">0</span>
+                                    <button type="button" class="w-8 h-8 rounded-full bg-zinc-700 text-white font-bold hover:bg-green-500 transition counter-btn" data-action="plus" data-target="item-cama">+</button>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm font-bold text-gray-300">🔲 Colchão (Avulso)</span>
+                                <div class="flex items-center gap-3">
+                                    <button type="button" class="w-8 h-8 rounded-full bg-zinc-700 text-white font-bold hover:bg-brand-red transition counter-btn" data-action="minus" data-target="item-colchao">-</button>
+                                    <span class="w-4 text-center font-bold item-count text-brand-yellow" id="item-colchao">0</span>
+                                    <button type="button" class="w-8 h-8 rounded-full bg-zinc-700 text-white font-bold hover:bg-green-500 transition counter-btn" data-action="plus" data-target="item-colchao">+</button>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm font-bold text-gray-300">🚪 Guarda-Roupa</span>
+                                <div class="flex items-center gap-3">
+                                    <button type="button" class="w-8 h-8 rounded-full bg-zinc-700 text-white font-bold hover:bg-brand-red transition counter-btn" data-action="minus" data-target="item-armario">-</button>
+                                    <span class="w-4 text-center font-bold item-count text-brand-yellow" id="item-armario">0</span>
+                                    <button type="button" class="w-8 h-8 rounded-full bg-zinc-700 text-white font-bold hover:bg-green-500 transition counter-btn" data-action="plus" data-target="item-armario">+</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
+
+                    <div>
+                        <h4 class="text-brand-yellow text-xs font-black uppercase mb-3 mt-4 border-b border-zinc-700 pb-1">Volumes e Embalagem</h4>
+                        <div class="space-y-3">
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm font-bold text-brand-yellow">📦 Caixas / Sacos (Aprox.)</span>
+                                <div class="flex items-center gap-3">
+                                    <button type="button" class="w-8 h-8 rounded-full bg-zinc-700 text-white font-bold hover:bg-brand-red transition counter-btn" data-action="minus" data-target="item-caixas">-</button>
+                                    <span class="w-4 text-center font-bold item-count text-white" id="item-caixas">0</span>
+                                    <button type="button" class="w-8 h-8 rounded-full bg-zinc-700 text-white font-bold hover:bg-green-500 transition counter-btn" data-action="plus" data-target="item-caixas">+</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
 
-                <input type="text" id="extra-items" placeholder="Faltou algo? (Ex: Bicicleta, Vidros)" class="w-full p-3 mt-2 bg-zinc-800 border border-zinc-700 text-white rounded-xl text-sm focus:border-brand-yellow focus:ring-1 ring-brand-yellow"/>
+                <input type="text" id="extra-items" placeholder="Faltou algo? (Ex: Bicicleta, Vidros, Plantas)" class="w-full p-3 mt-2 bg-zinc-800 border border-zinc-700 text-white rounded-xl text-sm focus:border-brand-yellow focus:ring-1 ring-brand-yellow"/>
             </div>
 
             <div class="flex gap-4 mt-8">
