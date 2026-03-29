@@ -1,122 +1,106 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>3M Transportes e Mudanças | Carretos e Mudanças - (11) 90000-0000</title>
-    <meta name="title" content="3M Transportes e Mudanças | Carretos e Mudanças">
-    <meta name="description" content="Solicite orçamento de carreto, frete, mudança e armazenamento. Atendimento rápido, seguro e eficiente com a 3M Transportes.">
-    <meta name="keywords" content="carreto, mudança, frete, transporte, carreto sp, caminhão baú, mudança residencial, embalagem, armazenamento">
-    <meta name="robots" content="index, follow">
-
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="#">
-    <meta property="og:title" content="🚚 3M Transportes - Orçamento Online">
-    <meta property="og:description" content="Precisa de frete, mudança ou armazenamento? Escolha o serviço, informe origem/destino e receba o valor exato pelo WhatsApp!">
-    <meta property="og:image" content="1774740489794~3.png">
-    <meta property="og:image:type" content="image/png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "MovingCompany",
-      "name": "3M Transportes e Mudanças",
-      "image": "1774740489794~3.png",
-      "telephone": "+5511900000000",
-      "url": "#",
-      "description": "Serviço profissional de embalagem, carretos, fretes, mudanças e armazenamento com segurança e agilidade.",
-      "areaServed": {
-        "@type": "GeoCircle",
-        "geoMidpoint": {
-          "@type": "GeoCoordinates",
-          "latitude": "-23.5505",
-          "longitude": "-46.6333"
-        },
-        "geoRadius": "50000"
-      },
-      "priceRange": "$$"
-    }
-    </script>
-
+    <title>3M Transportes | Embalagem e Guarda Móveis - (11) 90000-0000</title>
+    <meta name="title" content="3M Transportes | Embalagem e Guarda Móveis">
+    <meta name="description" content="Especialistas em embalagem, encaixotamento e guarda móveis. Atendimento rápido e seguro com a 3M Transportes.">
+    
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
     <script src="https://cdn.tailwindcss.com"></script>
 
     <style>
         :root {
-            --brand-dark: #1a1a1a;
-            --brand-yellow: #f6c324;
-            --brand-red: #d3121e;
+            --brand-dark: #0a0a0a; /* Fundo super escuro para destacar o neon */
+            --brand-gold: #ffcc00; /* Dourado brilhante do escudo */
+            --brand-red: #ff0033; /* Vermelho neon do 3M */
         }
         .bg-brand-dark { background-color: var(--brand-dark); }
-        .text-brand-yellow { color: var(--brand-yellow); }
+        .text-brand-gold { color: var(--brand-gold); }
         .text-brand-red { color: var(--brand-red); }
-        .border-brand-yellow { border-color: var(--brand-yellow); }
-        .neon-glow { box-shadow: 0 0 15px rgba(246, 195, 36, 0.4); }
+        .border-brand-gold { border-color: var(--brand-gold); }
+        
+        /* Efeito de brilho para os cards e botões combinando com o logo */
+        .neon-glow { box-shadow: 0 0 20px rgba(255, 204, 0, 0.15); border: 1px solid rgba(255, 204, 0, 0.3); }
+        .neon-glow:hover { box-shadow: 0 0 30px rgba(255, 204, 0, 0.4); border-color: var(--brand-gold); }
+        
+        .btn-neon {
+            box-shadow: 0 0 15px rgba(255, 0, 51, 0.4);
+        }
+
         input[type=number]::-webkit-inner-spin-button, 
         input[type=number]::-webkit-outer-spin-button { 
             -webkit-appearance: none; margin: 0; 
         }
+
+        /* Custom Scrollbar for Dark Mode */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #1a1a1a; }
+        ::-webkit-scrollbar-thumb { background: #ffcc00; border-radius: 4px; }
     </style>
 </head>
-<body class="bg-gray-100">
+<body class="bg-zinc-900 text-gray-200 font-sans selection:bg-yellow-500 selection:text-black">
 
-    <header class="w-full h-[500px] flex flex-col justify-center items-center text-center px-4 relative overflow-hidden" 
-            style="background-image: linear-gradient(rgba(26, 26, 26, 0.85), rgba(26, 26, 26, 0.95)), url('https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&q=80&w=2070'); background-size: cover; background-position: center;">
+    <header class="w-full h-[550px] flex flex-col justify-center items-center text-center px-4 relative overflow-hidden" 
+            style="background-image: linear-gradient(rgba(10, 10, 10, 0.9), rgba(10, 10, 10, 0.95)), url('https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&q=80&w=2070'); background-size: cover; background-position: center;">
         
-        <div class="absolute w-64 h-64 bg-yellow-500/20 blur-[120px] rounded-full"></div>
+        <div class="absolute w-72 h-72 bg-yellow-600/20 blur-[100px] rounded-full"></div>
+        <div class="absolute w-40 h-40 bg-red-600/20 blur-[80px] rounded-full"></div>
         
-        <img src="1774740489794~3.png" alt="Logotipo 3M Transportes" 
-             class="w-48 h-64 rounded-xl border-4 border-brand-yellow shadow-[0_0_30px_rgba(246,195,36,0.4)] mb-6 z-10 bg-white object-contain p-2"/>
+        <img src="https://i.ibb.co/yBKNmdJp/Logo-3M.png" alt="Logotipo 3M Transportes" 
+             class="w-64 h-auto mb-4 z-10 object-contain drop-shadow-[0_0_25px_rgba(255,204,0,0.5)]"/>
         
-        <h1 class="text-5xl font-black text-white tracking-tighter z-10 italic">
-            <span class="text-brand-red text-6xl">3M</span> <span class="text-brand-yellow uppercase">Transportes</span>
+        <h1 class="text-4xl md:text-5xl font-black text-white tracking-tighter z-10 italic mt-2">
+            <span class="text-brand-red drop-shadow-[0_0_10px_rgba(255,0,51,0.8)]">3M</span> 
+            <span class="text-brand-gold uppercase">Transportes</span>
         </h1>
-        <p class="text-white text-xl mt-2 font-bold z-10 tracking-widest uppercase">
-            Embalagem • Mudanças • Armazenamento
+        
+        <p class="text-gray-300 text-lg md:text-xl mt-3 font-bold z-10 tracking-[0.2em] uppercase">
+            Embalagem • Encaixotamento • Guarda Móveis
         </p>
 
-        <div class="mt-6 px-5 py-2 rounded-full transition-all z-10" id="status-badge" aria-live="polite">
-            <span id="status-text" class="text-white font-bold uppercase text-sm tracking-widest">Verificando Horário...</span>
+        <div class="mt-8 px-6 py-2 rounded-full border border-yellow-500/30 bg-black/50 backdrop-blur-sm z-10" id="status-badge" aria-live="polite">
+            <span id="status-text" class="text-brand-gold font-bold uppercase text-sm tracking-widest">Verificando Atendimento...</span>
         </div>
     </header>
 
-    <main class="max-w-7xl mx-auto px-4 py-10 mb-10">
-        <h2 class="text-3xl font-black text-center mb-10 text-brand-dark italic">SELECIONE O SERVIÇO</h2>
+    <main class="max-w-7xl mx-auto px-4 py-16 mb-10">
+        <h2 class="text-3xl font-black text-center mb-12 text-white italic tracking-wide">
+            SELECIONE O <span class="text-brand-gold">SERVIÇO</span>
+        </h2>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8" id="menu">
             
-            <article class="bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col md:flex-row hover:scale-[1.02] duration-300 neon-glow cursor-pointer add-to-cart-btn" data-name="Carreto Expresso">
-                <img src="https://images.unsplash.com/photo-1600518464441-9154a4dea21b?auto=format&fit=crop&q=80&w=500" alt="Caminhão para Carreto Expresso" class="w-full md:w-40 h-40 object-cover"/>
-                <div class="p-5 flex-1 flex flex-col justify-between pointer-events-none">
+            <article class="bg-zinc-800 rounded-2xl overflow-hidden flex flex-col md:flex-row hover:-translate-y-1 duration-300 neon-glow cursor-pointer add-to-cart-btn" data-name="Mudança Completa">
+                <img src="https://images.unsplash.com/photo-1600518464441-9154a4dea21b?auto=format&fit=crop&q=80&w=500" alt="Equipe de Mudança" class="w-full md:w-48 h-48 md:h-auto object-cover opacity-80"/>
+                <div class="p-6 flex-1 flex flex-col justify-between pointer-events-none">
                     <div>
-                        <h3 class="font-black text-xl mb-1 uppercase text-brand-dark">Carreto Expresso <span class="text-xs text-brand-red">Rápido e Prático</span></h3>
-                        <p class="text-gray-600 text-sm">Transporte ágil para móveis, eletrodomésticos, compras e itens individuais.</p>
+                        <h3 class="font-black text-2xl mb-2 uppercase text-white">Mudança <span class="text-brand-gold">Premium</span></h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">Serviço completo incluindo nossa especialidade: <strong>embalagem e encaixotamento</strong> seguro de todos os seus pertences.</p>
                     </div>
-                    <div class="flex items-center justify-between mt-4">
-                        <span class="font-bold text-xl text-green-600">Sob Consulta</span>
-                        <button class="bg-brand-dark text-white p-3 rounded-xl hover:bg-zinc-800 pointer-events-auto transition" aria-label="Solicitar Orçamento de Carreto">
-                            <i class="fa fa-arrow-right"></i>
+                    <div class="flex items-center justify-between mt-6">
+                        <span class="font-bold text-lg text-green-400 italic">Sob Consulta</span>
+                        <button class="bg-brand-red text-white w-12 h-12 rounded-xl pointer-events-auto transition hover:bg-red-700 btn-neon flex items-center justify-center" aria-label="Solicitar Orçamento">
+                            <i class="fa fa-arrow-right text-xl"></i>
                         </button>
                     </div>
                 </div>
             </article>
 
-            <article class="bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col md:flex-row hover:scale-[1.02] duration-300 neon-glow cursor-pointer add-to-cart-btn" data-name="Mudança Completa">
-                <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=500" alt="Equipe realizando Mudança Residencial" class="w-full md:w-40 h-40 object-cover"/>
-                <div class="p-5 flex-1 flex flex-col justify-between pointer-events-none">
+            <article class="bg-zinc-800 rounded-2xl overflow-hidden flex flex-col md:flex-row hover:-translate-y-1 duration-300 neon-glow cursor-pointer add-to-cart-btn" data-name="Guarda Móveis">
+                <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=500" alt="Guarda Móveis" class="w-full md:w-48 h-48 md:h-auto object-cover opacity-80"/>
+                <div class="p-6 flex-1 flex flex-col justify-between pointer-events-none">
                     <div>
-                        <h3 class="font-black text-xl mb-1 uppercase text-brand-dark">Mudança Completa <span class="text-xs text-brand-red">Com Embalagem</span></h3>
-                        <p class="text-gray-600 text-sm">Cuidado total com seus bens. Equipe especializada, proteção e possibilidade de armazenamento.</p>
+                        <h3 class="font-black text-2xl mb-2 uppercase text-white">Guarda <span class="text-brand-gold">Móveis</span></h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">Espaço seguro e monitorado para armazenar seus móveis e caixas pelo tempo que precisar, com total proteção.</p>
                     </div>
-                    <div class="flex items-center justify-between mt-4">
-                        <span class="font-bold text-xl text-green-600 italic">Sob Consulta</span>
-                        <button class="bg-brand-dark text-white p-3 rounded-xl hover:bg-zinc-800 pointer-events-auto transition" aria-label="Solicitar Orçamento de Mudança">
-                            <i class="fa fa-arrow-right"></i>
+                    <div class="flex items-center justify-between mt-6">
+                        <span class="font-bold text-lg text-green-400 italic">Planos Mensais</span>
+                        <button class="bg-brand-red text-white w-12 h-12 rounded-xl pointer-events-auto transition hover:bg-red-700 btn-neon flex items-center justify-center" aria-label="Solicitar Orçamento">
+                            <i class="fa fa-arrow-right text-xl"></i>
                         </button>
                     </div>
                 </div>
@@ -125,156 +109,90 @@
         </div>
     </main>
 
-    <div class="fixed inset-0 bg-black/70 z-[100] flex items-center justify-center hidden p-4" id="quote-modal" role="dialog" aria-modal="true">
-        <div class="bg-white w-full max-w-lg rounded-3xl p-6 overflow-y-auto max-h-[90vh]">
-            <h2 class="text-2xl font-black text-center mb-4 uppercase text-brand-dark italic">Detalhes do Orçamento</h2>
+    <div class="fixed inset-0 bg-black/90 z-[100] flex items-center justify-center hidden p-4 backdrop-blur-sm" id="quote-modal" role="dialog" aria-modal="true">
+        <div class="bg-zinc-900 border border-zinc-700 w-full max-w-lg rounded-2xl p-6 overflow-y-auto max-h-[90vh] shadow-[0_0_40px_rgba(0,0,0,0.8)]">
             
-            <p id="selected-service-title" class="text-center font-bold text-brand-yellow bg-brand-dark py-2 rounded-lg mb-6 uppercase"></p>
+            <h2 class="text-2xl font-black text-center mb-4 uppercase text-white italic">Seu Orçamento</h2>
+            <p id="selected-service-title" class="text-center font-bold text-black bg-brand-gold py-2 rounded-lg mb-6 uppercase tracking-wider"></p>
 
             <div class="space-y-4">
-                <p class="font-bold border-l-4 border-brand-yellow pl-2 uppercase text-sm text-brand-dark">1. Logística e Trajeto</p>
+                <p class="font-bold border-l-4 border-brand-red pl-2 uppercase text-sm text-gray-300">1. Logística e Trajeto</p>
                 
-                <div class="flex flex-col gap-2">
+                <div class="flex flex-col gap-3">
                     <div class="flex gap-2">
-                        <input type="text" id="cep-origin" placeholder="CEP (Opcional)" class="w-1/3 p-3 bg-gray-100 rounded-xl outline-none focus:ring-2 ring-yellow-400 text-sm" maxlength="9"/>
-                        <input type="text" id="origin" placeholder="📍 Retirada (Rua/Bairro/Cidade)" class="w-2/3 p-3 bg-gray-100 rounded-xl outline-none focus:ring-2 ring-yellow-400"/>
+                        <input type="text" id="cep-origin" placeholder="CEP Origem" class="w-1/3 p-3 bg-zinc-800 border border-zinc-700 text-white rounded-xl outline-none focus:border-brand-gold focus:ring-1 ring-brand-gold text-sm placeholder-gray-500" maxlength="9"/>
+                        <input type="text" id="origin" placeholder="📍 Retirada (Endereço completo)" class="w-2/3 p-3 bg-zinc-800 border border-zinc-700 text-white rounded-xl outline-none focus:border-brand-gold focus:ring-1 ring-brand-gold placeholder-gray-500"/>
                     </div>
-                    <input type="text" id="num-origin" placeholder="Número / Complemento" class="w-full p-3 bg-gray-100 rounded-xl outline-none focus:ring-2 ring-yellow-400"/>
-                </div>
-
-                <div class="flex flex-col gap-2 mt-4">
                     <div class="flex gap-2">
-                        <input type="text" id="cep-destination" placeholder="CEP (Opcional)" class="w-1/3 p-3 bg-gray-100 rounded-xl outline-none focus:ring-2 ring-yellow-400 text-sm" maxlength="9"/>
-                        <input type="text" id="destination" placeholder="🏁 Entrega (Rua/Bairro/Cidade)" class="w-2/3 p-3 bg-gray-100 rounded-xl outline-none focus:ring-2 ring-yellow-400"/>
+                        <input type="text" id="cep-destination" placeholder="CEP Destino" class="w-1/3 p-3 bg-zinc-800 border border-zinc-700 text-white rounded-xl outline-none focus:border-brand-gold focus:ring-1 ring-brand-gold text-sm placeholder-gray-500" maxlength="9"/>
+                        <input type="text" id="destination" placeholder="🏁 Entrega (Endereço completo)" class="w-2/3 p-3 bg-zinc-800 border border-zinc-700 text-white rounded-xl outline-none focus:border-brand-gold focus:ring-1 ring-brand-gold placeholder-gray-500"/>
                     </div>
-                    <input type="text" id="num-destination" placeholder="Número / Complemento" class="w-full p-3 bg-gray-100 rounded-xl outline-none focus:ring-2 ring-yellow-400"/>
                 </div>
                 
-                <select id="access-type" class="w-full p-3 mt-4 bg-gray-100 rounded-xl outline-none focus:ring-2 ring-yellow-400 text-sm">
-                    <option value="" disabled selected>O local de retirada/entrega possui escadas?</option>
-                    <option value="Casa Térrea / Sem escadas">Casa Térrea / Sem escadas</option>
+                <select id="access-type" class="w-full p-3 mt-2 bg-zinc-800 border border-zinc-700 text-white rounded-xl outline-none focus:border-brand-gold focus:ring-1 ring-brand-gold text-sm">
+                    <option value="" disabled selected>O local possui escadas?</option>
+                    <option value="Térreo nos dois locais">Térreo nos dois locais</option>
                     <option value="Apartamento com Elevador">Apartamento (Com Elevador)</option>
                     <option value="Possui Escadas">Possui Escadas (Informar no WhatsApp)</option>
                 </select>
 
-                <p class="font-bold border-l-4 border-brand-yellow pl-2 uppercase text-sm text-brand-dark mt-6">2. Serviços 3M Especializados</p>
-                <div class="grid grid-cols-2 gap-2">
-                    <select id="helpers" class="w-full p-3 bg-gray-100 rounded-xl outline-none focus:ring-2 ring-yellow-400 text-sm">
-                        <option value="Somente o Motorista">Sem Ajudante</option>
-                        <option value="1 Ajudante">1 Ajudante</option>
-                        <option value="2 Ajudantes">2 Ajudantes</option>
+                <p class="font-bold border-l-4 border-brand-red pl-2 uppercase text-sm text-gray-300 mt-6">2. Serviços Especiais 3M</p>
+                <div class="grid grid-cols-2 gap-3">
+                    <select id="packing" class="w-full p-3 bg-zinc-800 border border-zinc-700 text-white rounded-xl outline-none focus:border-brand-gold text-sm">
+                        <option value="Quero o serviço de Embalagem">Embalagem Completa</option>
+                        <option value="Somente Encaixotamento">Só Encaixotamento</option>
+                        <option value="Eu mesmo vou embalar">Eu mesmo vou embalar</option>
                     </select>
-                    <select id="assembly" class="w-full p-3 bg-gray-100 rounded-xl outline-none focus:ring-2 ring-yellow-400 text-sm">
-                        <option value="Sem embalagem especial">Sem Embalagem Especial</option>
-                        <option value="Com embalagem 3M">Quero o serviço de Embalagem</option>
-                        <option value="Com armazenamento">Preciso de Armazenamento</option>
+                    <select id="storage" class="w-full p-3 bg-zinc-800 border border-zinc-700 text-white rounded-xl outline-none focus:border-brand-gold text-sm">
+                        <option value="Direto para o destino">Sem Guarda Móveis</option>
+                        <option value="Preciso de Guarda Móveis">Preciso de Guarda Móveis</option>
                     </select>
                 </div>
 
-                <p class="font-bold border-l-4 border-brand-yellow pl-2 uppercase text-sm text-brand-dark mt-6">3. Itens Principais (Volume)</p>
+                <p class="font-bold border-l-4 border-brand-red pl-2 uppercase text-sm text-gray-300 mt-6">3. Inventário Básico (Volumes)</p>
                 
-                <div class="bg-gray-50 p-4 rounded-xl border border-gray-200 space-y-3">
-                    
+                <div class="bg-zinc-800/50 p-4 rounded-xl border border-zinc-700 space-y-3">
                     <div class="flex justify-between items-center">
-                        <span class="text-sm font-bold text-gray-700">🧊 Geladeira</span>
+                        <span class="text-sm font-bold text-gray-300">🧊 Geladeira</span>
                         <div class="flex items-center gap-3">
-                            <button type="button" class="w-8 h-8 rounded-full bg-gray-200 text-gray-700 font-bold hover:bg-red-200 transition counter-btn" data-action="minus" data-target="item-geladeira">-</button>
-                            <span class="w-4 text-center font-bold item-count" id="item-geladeira">0</span>
-                            <button type="button" class="w-8 h-8 rounded-full bg-brand-dark text-white font-bold hover:bg-brand-yellow hover:text-black transition counter-btn" data-action="plus" data-target="item-geladeira">+</button>
-                        </div>
-                    </div>
-                    <div class="flex justify-between items-center">
-                        <span class="text-sm font-bold text-gray-700">🔥 Fogão</span>
-                        <div class="flex items-center gap-3">
-                            <button type="button" class="w-8 h-8 rounded-full bg-gray-200 text-gray-700 font-bold hover:bg-red-200 transition counter-btn" data-action="minus" data-target="item-fogao">-</button>
-                            <span class="w-4 text-center font-bold item-count" id="item-fogao">0</span>
-                            <button type="button" class="w-8 h-8 rounded-full bg-brand-dark text-white font-bold hover:bg-brand-yellow hover:text-black transition counter-btn" data-action="plus" data-target="item-fogao">+</button>
+                            <button type="button" class="w-8 h-8 rounded-full bg-zinc-700 text-white font-bold hover:bg-red-500 transition counter-btn flex items-center justify-center" data-action="minus" data-target="item-geladeira">-</button>
+                            <span class="w-4 text-center font-bold item-count text-brand-gold" id="item-geladeira">0</span>
+                            <button type="button" class="w-8 h-8 rounded-full bg-zinc-700 text-white font-bold hover:bg-green-500 transition counter-btn flex items-center justify-center" data-action="plus" data-target="item-geladeira">+</button>
                         </div>
                     </div>
                     <div class="flex justify-between items-center">
-                        <span class="text-sm font-bold text-gray-700">🧺 Máquina de Lavar</span>
+                        <span class="text-sm font-bold text-gray-300">🔥 Fogão</span>
                         <div class="flex items-center gap-3">
-                            <button type="button" class="w-8 h-8 rounded-full bg-gray-200 text-gray-700 font-bold hover:bg-red-200 transition counter-btn" data-action="minus" data-target="item-maquina">-</button>
-                            <span class="w-4 text-center font-bold item-count" id="item-maquina">0</span>
-                            <button type="button" class="w-8 h-8 rounded-full bg-brand-dark text-white font-bold hover:bg-brand-yellow hover:text-black transition counter-btn" data-action="plus" data-target="item-maquina">+</button>
-                        </div>
-                    </div>
-
-                    <div class="flex justify-between items-center border-t pt-2">
-                        <span class="text-sm font-bold text-gray-700">🛋️ Sofá</span>
-                        <div class="flex items-center gap-3">
-                            <button type="button" class="w-8 h-8 rounded-full bg-gray-200 text-gray-700 font-bold hover:bg-red-200 transition counter-btn" data-action="minus" data-target="item-sofa">-</button>
-                            <span class="w-4 text-center font-bold item-count" id="item-sofa">0</span>
-                            <button type="button" class="w-8 h-8 rounded-full bg-brand-dark text-white font-bold hover:bg-brand-yellow hover:text-black transition counter-btn" data-action="plus" data-target="item-sofa">+</button>
+                            <button type="button" class="w-8 h-8 rounded-full bg-zinc-700 text-white font-bold hover:bg-red-500 transition counter-btn flex items-center justify-center" data-action="minus" data-target="item-fogao">-</button>
+                            <span class="w-4 text-center font-bold item-count text-brand-gold" id="item-fogao">0</span>
+                            <button type="button" class="w-8 h-8 rounded-full bg-zinc-700 text-white font-bold hover:bg-green-500 transition counter-btn flex items-center justify-center" data-action="plus" data-target="item-fogao">+</button>
                         </div>
                     </div>
                     <div class="flex justify-between items-center">
-                        <span class="text-sm font-bold text-gray-700">📺 Rack</span>
+                        <span class="text-sm font-bold text-gray-300">🛋️ Sofá</span>
                         <div class="flex items-center gap-3">
-                            <button type="button" class="w-8 h-8 rounded-full bg-gray-200 text-gray-700 font-bold hover:bg-red-200 transition counter-btn" data-action="minus" data-target="item-rack">-</button>
-                            <span class="w-4 text-center font-bold item-count" id="item-rack">0</span>
-                            <button type="button" class="w-8 h-8 rounded-full bg-brand-dark text-white font-bold hover:bg-brand-yellow hover:text-black transition counter-btn" data-action="plus" data-target="item-rack">+</button>
+                            <button type="button" class="w-8 h-8 rounded-full bg-zinc-700 text-white font-bold hover:bg-red-500 transition counter-btn flex items-center justify-center" data-action="minus" data-target="item-sofa">-</button>
+                            <span class="w-4 text-center font-bold item-count text-brand-gold" id="item-sofa">0</span>
+                            <button type="button" class="w-8 h-8 rounded-full bg-zinc-700 text-white font-bold hover:bg-green-500 transition counter-btn flex items-center justify-center" data-action="plus" data-target="item-sofa">+</button>
                         </div>
                     </div>
-                    <div class="flex justify-between items-center">
-                        <span class="text-sm font-bold text-gray-700">🖥️ Painel de TV</span>
+                    <div class="flex justify-between items-center border-t border-zinc-700 pt-3 mt-2">
+                        <span class="text-sm font-bold text-gray-300">📦 Caixas a serem feitas</span>
                         <div class="flex items-center gap-3">
-                            <button type="button" class="w-8 h-8 rounded-full bg-gray-200 text-gray-700 font-bold hover:bg-red-200 transition counter-btn" data-action="minus" data-target="item-painel">-</button>
-                            <span class="w-4 text-center font-bold item-count" id="item-painel">0</span>
-                            <button type="button" class="w-8 h-8 rounded-full bg-brand-dark text-white font-bold hover:bg-brand-yellow hover:text-black transition counter-btn" data-action="plus" data-target="item-painel">+</button>
-                        </div>
-                    </div>
-                    <div class="flex justify-between items-center">
-                        <span class="text-sm font-bold text-gray-700">🪑 Mesa</span>
-                        <div class="flex items-center gap-3">
-                            <button type="button" class="w-8 h-8 rounded-full bg-gray-200 text-gray-700 font-bold hover:bg-red-200 transition counter-btn" data-action="minus" data-target="item-mesa">-</button>
-                            <span class="w-4 text-center font-bold item-count" id="item-mesa">0</span>
-                            <button type="button" class="w-8 h-8 rounded-full bg-brand-dark text-white font-bold hover:bg-brand-yellow hover:text-black transition counter-btn" data-action="plus" data-target="item-mesa">+</button>
-                        </div>
-                    </div>
-
-                    <div class="flex justify-between items-center border-t pt-2">
-                        <span class="text-sm font-bold text-gray-700">🛏️ Cama</span>
-                        <div class="flex items-center gap-3">
-                            <button type="button" class="w-8 h-8 rounded-full bg-gray-200 text-gray-700 font-bold hover:bg-red-200 transition counter-btn" data-action="minus" data-target="item-cama">-</button>
-                            <span class="w-4 text-center font-bold item-count" id="item-cama">0</span>
-                            <button type="button" class="w-8 h-8 rounded-full bg-brand-dark text-white font-bold hover:bg-brand-yellow hover:text-black transition counter-btn" data-action="plus" data-target="item-cama">+</button>
-                        </div>
-                    </div>
-                    <div class="flex justify-between items-center">
-                        <span class="text-sm font-bold text-gray-700">🔲 Colchão (Avulso)</span>
-                        <div class="flex items-center gap-3">
-                            <button type="button" class="w-8 h-8 rounded-full bg-gray-200 text-gray-700 font-bold hover:bg-red-200 transition counter-btn" data-action="minus" data-target="item-colchao">-</button>
-                            <span class="w-4 text-center font-bold item-count" id="item-colchao">0</span>
-                            <button type="button" class="w-8 h-8 rounded-full bg-brand-dark text-white font-bold hover:bg-brand-yellow hover:text-black transition counter-btn" data-action="plus" data-target="item-colchao">+</button>
-                        </div>
-                    </div>
-                    <div class="flex justify-between items-center">
-                        <span class="text-sm font-bold text-gray-700">🚪 Guarda-Roupa</span>
-                        <div class="flex items-center gap-3">
-                            <button type="button" class="w-8 h-8 rounded-full bg-gray-200 text-gray-700 font-bold hover:bg-red-200 transition counter-btn" data-action="minus" data-target="item-armario">-</button>
-                            <span class="w-4 text-center font-bold item-count" id="item-armario">0</span>
-                            <button type="button" class="w-8 h-8 rounded-full bg-brand-dark text-white font-bold hover:bg-brand-yellow hover:text-black transition counter-btn" data-action="plus" data-target="item-armario">+</button>
-                        </div>
-                    </div>
-
-                    <div class="flex justify-between items-center border-t pt-2">
-                        <span class="text-sm font-bold text-gray-700">📦 Caixas / Sacos (Aprox.)</span>
-                        <div class="flex items-center gap-3">
-                            <button type="button" class="w-8 h-8 rounded-full bg-gray-200 text-gray-700 font-bold hover:bg-red-200 transition counter-btn" data-action="minus" data-target="item-caixas">-</button>
-                            <span class="w-4 text-center font-bold item-count" id="item-caixas">0</span>
-                            <button type="button" class="w-8 h-8 rounded-full bg-brand-dark text-white font-bold hover:bg-brand-yellow hover:text-black transition counter-btn" data-action="plus" data-target="item-caixas">+</button>
+                            <button type="button" class="w-8 h-8 rounded-full bg-zinc-700 text-white font-bold hover:bg-red-500 transition counter-btn flex items-center justify-center" data-action="minus" data-target="item-caixas">-</button>
+                            <span class="w-4 text-center font-bold item-count text-brand-gold" id="item-caixas">0</span>
+                            <button type="button" class="w-8 h-8 rounded-full bg-zinc-700 text-white font-bold hover:bg-green-500 transition counter-btn flex items-center justify-center" data-action="plus" data-target="item-caixas">+</button>
                         </div>
                     </div>
                 </div>
 
-                <input type="text" id="extra-items" placeholder="Faltou algo? (Ex: Bicicleta, Vidros)" class="w-full p-3 mt-2 bg-gray-50 rounded-xl border border-gray-200 text-sm focus:ring-2 ring-yellow-400"/>
+                <input type="text" id="extra-items" placeholder="Faltou algo? (Ex: Camas, Armários, Vidros)" class="w-full p-3 mt-2 bg-zinc-800 border border-zinc-700 text-white rounded-xl text-sm focus:border-brand-gold focus:ring-1 ring-brand-gold placeholder-gray-500"/>
             </div>
 
             <div class="flex gap-4 mt-8">
-                <button type="button" id="close-modal-btn" class="flex-1 py-3 font-bold text-gray-500 hover:bg-gray-100 rounded-xl transition">Voltar</button>
-                <button type="button" id="send-whatsapp-btn" class="flex-1 bg-green-600 text-white py-3 rounded-xl font-black shadow-lg shadow-green-200 uppercase hover:bg-green-700 transition flex justify-center items-center gap-2">
-                    <i class="fab fa-whatsapp text-xl"></i> Solicitar
+                <button type="button" id="close-modal-btn" class="flex-1 py-3 font-bold text-gray-400 hover:text-white hover:bg-zinc-800 rounded-xl transition border border-zinc-700">Cancelar</button>
+                <button type="button" id="send-whatsapp-btn" class="flex-1 bg-brand-gold text-black py-3 rounded-xl font-black shadow-[0_0_15px_rgba(255,204,0,0.3)] uppercase hover:bg-yellow-400 transition flex justify-center items-center gap-2">
+                    <i class="fab fa-whatsapp text-xl"></i> Enviar
                 </button>
             </div>
         </div>
