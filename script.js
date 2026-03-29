@@ -1,6 +1,5 @@
-
 document.addEventListener("DOMContentLoaded", () => {
-    // Número principal extraído do cartão de visita
+    // Número principal oficial da 3M
     const WHATSAPP_NUMBER = "5511993977895"; 
 
     const serviceCards = document.querySelectorAll(".add-to-cart-btn");
