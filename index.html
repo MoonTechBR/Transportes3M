@@ -506,12 +506,10 @@
                 const badge = document.getElementById("status-badge");
                 const statusText = document.getElementById("status-text");
                 const now = new Date();
-                const day = now.getDay(); 
                 const hour = now.getHours();
 
                 let isOpen = false;
-                if (day >= 1 && day <= 5 && hour >= 8 && hour < 18) isOpen = true;
-                else if (day === 6 && hour >= 8 && hour < 14) isOpen = true;
+                if (hour >= 7 && hour < 22) isOpen = true;
 
                 if (isOpen) {
                     badge.classList.add("border-green-500/50");
